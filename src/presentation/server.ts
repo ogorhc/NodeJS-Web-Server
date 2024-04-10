@@ -48,7 +48,7 @@ export class Server {
     });
 
     this.app.listen(this.port, () => {
-      console.log(`Server running on PORT: ${this.port}`);
+      console.log(`Server running on PORT:  ${this.port}`);
     });
   }
 }
