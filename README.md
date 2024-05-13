@@ -6,3 +6,9 @@
 ```
 docker compose up -d
 ```
+
+3. Ejecutar el comando para instalar los módulos de node
+
+```
+npm install
+```

@@ -9,7 +9,8 @@ interface ServerOptions {
 }
 
 export class Server {
-  private app = express();
+  public readonly app = express();
+  private serverListener?: any;
   private readonly port: number;
   private readonly publicPath: string;
   private readonly routes: Router;
@@ -49,8 +50,11 @@ export class Server {
       return;
     });
 
-    this.app.listen(this.port, () => {
+    this.serverListener = this.app.listen(this.port, () => {
       console.log(`Server running on PORT: ${this.port}`);
     });
+  }
+  public close() {
+    this.serverListener?.close();
   }
 }
